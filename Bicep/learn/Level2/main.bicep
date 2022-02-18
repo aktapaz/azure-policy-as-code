@@ -7,7 +7,7 @@ param assignmentIdentityLocation string //level2
 param mandatoryTag1Key string = 'BicepTagName' //level2
 param mandatoryTag1Value string //level2
 param assignmentEnforcementMode string = 'Default'
-param listOfAllowedLocations array = [
+/*param listOfAllowedLocations array = [
   'australiaeast'
   'australiasoutheast'
 ]
@@ -19,18 +19,18 @@ param listOfAllowedSKUs array = [
   'Standard_B2s'
   'Standard_B4ms'
   'Standard_B4s'
-]
+]*/
 
 // VARIABLES
-var initiative1Name = 'Initiative1'
-var assignment1Name = 'Initiative1'
+//var initiative1Name = 'Initiative1'
+//var assignment1Name = 'Initiative1'
 var initiative2Name = 'Initiative2' //level2
 var assignment2Name = 'Initiative2' //level2
 
 // OUTPUTS
-output initiative1ID string = initiative1.id
+//output initiative1ID string = initiative1.id
 output initiative2ID string = initiative2.id //level2
-output assignment1ID string = assignment1.id
+//output assignment1ID string = assignment1.id
 output assignment2ID string = assignment2.id //level2
 
 // RESOURCES
@@ -97,7 +97,7 @@ resource policy 'Microsoft.Authorization/policyDefinitions@2020-09-01' = {
   }
 }
 
-resource initiative1 'Microsoft.Authorization/policySetDefinitions@2020-09-01' = {
+/*resource initiative1 'Microsoft.Authorization/policySetDefinitions@2020-09-01' = {
   name: initiative1Name
   properties: {
     policyType: 'Custom'
@@ -161,7 +161,7 @@ resource initiative1 'Microsoft.Authorization/policySetDefinitions@2020-09-01' =
       }
     ]
   }
-}
+}*/
 
 resource initiative2 'Microsoft.Authorization/policySetDefinitions@2020-09-01' = {
   //level2
@@ -208,7 +208,7 @@ resource initiative2 'Microsoft.Authorization/policySetDefinitions@2020-09-01' =
   }
 }
 
-resource assignment1 'Microsoft.Authorization/policyAssignments@2020-09-01' = {
+/*resource assignment1 'Microsoft.Authorization/policyAssignments@2020-09-01' = {
   name: assignment1Name
   properties: {
     displayName: assignment1Name
@@ -228,7 +228,7 @@ resource assignment1 'Microsoft.Authorization/policyAssignments@2020-09-01' = {
       }
     }
   }
-}
+}*/
 
 resource assignment2 'Microsoft.Authorization/policyAssignments@2020-09-01' = {
   //level2
